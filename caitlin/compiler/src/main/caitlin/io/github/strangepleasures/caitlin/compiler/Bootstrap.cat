@@ -1,0 +1,26 @@
+package io.github.strangepleasures.caitlin.compiler;
+
+import java.io.File;
+import java.io.IOException;
+import static io.github.strangepleasures.caitlin.compiler.Caitlin.transpileDir;
+
+public class Bootstrap {
+    public static void main(String[] args) throws IOException {
+        transpileDir(
+            new File("caitlin/compiler/src/main/caitlin"),
+            new File("caitlin/compiler/src/main/java-generated")
+        );
+        transpileDir(
+            new File("caitlin/compiler/src/test/caitlin"),
+            new File("caitlin/compiler/src/test/java-generated")
+        );
+        transpileDir(
+            new File("caitlin/stdlib/src/main/caitlin"),
+            new File("caitlin/stdlib/src/main/java-generated")
+        );
+        transpileDir(
+            new File("caitlin/gradle-plugin/src/main/caitlin"),
+            new File("caitlin/gradle-plugin/src/main/java-generated")
+        );
+    }
+}

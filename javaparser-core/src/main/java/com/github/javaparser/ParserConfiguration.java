@@ -229,6 +229,8 @@ public class ParserConfiguration {
 
     private final List<Supplier<Processor>> processors = new ArrayList<>();
 
+    private boolean generateCaitlinHeaders = false;
+
     private class UnicodeEscapeProcessor extends Processor {
 
         private UnicodeEscapeProcessingProvider _unicodeDecoder;
@@ -465,5 +467,13 @@ public class ParserConfiguration {
     public ParserConfiguration setCharacterEncoding(Charset characterEncoding) {
         this.characterEncoding = characterEncoding;
         return this;
+    }
+
+    public boolean isGenerateCaitlinHeaders() {
+        return generateCaitlinHeaders;
+    }
+
+    public void setGenerateCaitlinHeaders(boolean generateCaitlinHeaders) {
+        this.generateCaitlinHeaders = generateCaitlinHeaders;
     }
 }
